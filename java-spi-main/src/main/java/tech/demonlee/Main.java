@@ -2,7 +2,6 @@ package tech.demonlee;
 
 import tech.demonlee.greeter.Greeter;
 
-import java.util.Iterator;
 import java.util.ServiceLoader;
 
 public class Main {
