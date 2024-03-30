@@ -1,0 +1,3 @@
+dependencies {
+    implementation('tech.demonlee:java-spi-greeter-api:1.0-SNAPSHOT')
+}

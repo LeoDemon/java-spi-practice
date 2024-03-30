@@ -1,0 +1,6 @@
+rootProject.name = 'java-spi-practice'
+include 'java-spi-main'
+include 'java-spi-chinese-greeter'
+include 'java-spi-english-greeter'
+include 'java-spi-greeter-api'
+
