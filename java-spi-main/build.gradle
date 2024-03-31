@@ -2,4 +2,6 @@ dependencies {
     implementation('tech.demonlee:java-spi-greeter-api:1.0-SNAPSHOT')
     implementation('tech.demonlee:java-spi-chinese-greeter:1.0-SNAPSHOT')
     implementation('tech.demonlee:java-spi-english-greeter:1.0-SNAPSHOT')
+
+    implementation ('mysql:mysql-connector-java:8.0.33')
 }
