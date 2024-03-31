@@ -47,4 +47,17 @@ class ClassLoaderTest {
         System.out.println("java.sql.Driver class loader is: " + driverClassLoader.getClass().getCanonicalName());
         Assertions.assertEquals("platform", driverClassLoader.getName());
     }
+
+    /**
+     * Parent ClassLoader
+     */
+    @Test
+    void should_validate_parent_class_loader() {
+        ClassLoader classLoader = this.getClass().getClassLoader();
+        Assertions.assertEquals("app", classLoader.getName());
+        ClassLoader parentClassLoader = classLoader.getParent();
+        Assertions.assertEquals("platform", parentClassLoader.getName());
+        ClassLoader grandpaClassLoader = parentClassLoader.getParent();
+        Assertions.assertNull(grandpaClassLoader);
+    }
 }

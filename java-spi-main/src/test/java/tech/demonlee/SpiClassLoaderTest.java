@@ -3,6 +3,7 @@ package tech.demonlee;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.sql.Driver;
 import java.util.ServiceLoader;
 
 /**
@@ -22,10 +23,16 @@ class SpiClassLoaderTest {
 
         driverServiceLoader.stream().forEach(s -> {
             java.sql.Driver driver = s.get();
-            System.out.println("driver: " + driver.getClass());
+            printDriverInfo(driver);
 
             ClassLoader classLoader = driver.getClass().getClassLoader();
             System.out.println("driver class loader is: " + classLoader.getClass().getCanonicalName());
         });
+    }
+
+    private static void printDriverInfo(Driver driver) {
+        System.out.println("driver: " + driver.getClass());
+        System.out.println("driver.minorVersion: " + driver.getMinorVersion() +
+                ", majorVersion: " + driver.getMajorVersion());
     }
 }
